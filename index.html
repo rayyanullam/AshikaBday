@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Ashrita! 🎉</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .dancing-script {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ff6b6b;
+            animation: confettiFall 3s linear infinite;
+        }
+        
+        .confetti:nth-child(2n) { background: #4ecdc4; animation-delay: -0.5s; }
+        .confetti:nth-child(3n) { background: #45b7d1; animation-delay: -1s; }
+        .confetti:nth-child(4n) { background: #f9ca24; animation-delay: -1.5s; }
+        .confetti:nth-child(5n) { background: #6c5ce7; animation-delay: -2s; }
+        
+        @keyframes confettiFall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+        
+        .balloon {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .star {
+            position: absolute;
+            background: white;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            animation: twinkle 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes twinkle {
+            0% { opacity: 0.3; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        .heart {
+            position: absolute;
+            color: #ff6b6b;
+            animation: heartFloat 4s ease-in-out infinite;
+        }
+        
+        @keyframes heartFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+            50% { transform: translateY(-30px) rotate(10deg); opacity: 1; }
+        }
+        
+        .sticky-note {
+            background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+            transform: rotate(-2deg);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .sticky-note:nth-child(2n) {
+            background: linear-gradient(135deg, #a8e6cf, #7fcdcd);
+            transform: rotate(1deg);
+        }
+        
+        .sticky-note:nth-child(3n) {
+            background: linear-gradient(135deg, #ffd3e1, #fd79a8);
+            transform: rotate(-1deg);
+        }
+        
+        .sticky-note:nth-child(4n) {
+            background: linear-gradient(135deg, #e17055, #fab1a0);
+            transform: rotate(2deg);
+        }
+        
+        .sticky-note:nth-child(5n) {
+            background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+            transform: rotate(-3deg);
+        }
+        
+        .sticky-note:hover {
+            transform: rotate(0deg) scale(1.05);
+            z-index: 10;
+        }
+        
+        .bounce-in {
+            animation: bounceIn 0.8s ease-out;
+        }
+        
+        @keyframes bounceIn {
+            0% { transform: scale(0.3) rotate(0deg); opacity: 0; }
+            50% { transform: scale(1.1) rotate(5deg); opacity: 0.8; }
+            100% { transform: scale(1) rotate(-2deg); opacity: 1; }
+        }
+        
+        .musical-note {
+            position: absolute;
+            color: #6c5ce7;
+            animation: noteFloat 3s ease-in-out infinite;
+        }
+        
+        @keyframes noteFloat {
+            0% { transform: translateY(0px) rotate(0deg); opacity: 0.6; }
+            50% { transform: translateY(-40px) rotate(180deg); opacity: 1; }
+            100% { transform: translateY(-80px) rotate(360deg); opacity: 0; }
+        }
+        
+        .candle-flame {
+            background: radial-gradient(circle, #ffa500 0%, #ff4500 70%);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: flicker 1s ease-in-out infinite alternate;
+        }
+        
+        @keyframes flicker {
+            0% { transform: scale(1) rotate(-1deg); }
+            100% { transform: scale(1.1) rotate(1deg); }
+        }
+        
+        .firework {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            animation: fireworkExplode 1s ease-out;
+        }
+        
+        @keyframes fireworkExplode {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(20); opacity: 0; }
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+        
+        .photo-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .photo-hover:hover {
+            transform: scale(1.1) rotate(2deg);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .wish-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            animation: slideInUp 0.5s ease-out;
+        }
+        
+        @keyframes slideInUp {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        
+        .cork-board {
+            background: 
+                radial-gradient(circle at 20% 20%, #8B4513 2px, transparent 2px),
+                radial-gradient(circle at 80% 20%, #8B4513 2px, transparent 2px),
+                radial-gradient(circle at 20% 80%, #8B4513 2px, transparent 2px),
+                radial-gradient(circle at 80% 80%, #8B4513 2px, transparent 2px),
+                linear-gradient(45deg, #DEB887 25%, transparent 25%),
+                linear-gradient(-45deg, #DEB887 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #DEB887 75%),
+                linear-gradient(-45deg, transparent 75%, #DEB887 75%),
+                #F5DEB3;
+            background-size: 100px 100px, 100px 100px, 100px 100px, 100px 100px, 20px 20px, 20px 20px, 20px 20px, 20px 20px, 100% 100%;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Confetti Animation -->
+    <div class="fixed inset-0 pointer-events-none z-50">
+        <div class="confetti" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="confetti" style="left: 20%; animation-delay: -0.3s;"></div>
+        <div class="confetti" style="left: 30%; animation-delay: -0.6s;"></div>
+        <div class="confetti" style="left: 40%; animation-delay: -0.9s;"></div>
+        <div class="confetti" style="left: 50%; animation-delay: -1.2s;"></div>
+        <div class="confetti" style="left: 60%; animation-delay: -1.5s;"></div>
+        <div class="confetti" style="left: 70%; animation-delay: -1.8s;"></div>
+        <div class="confetti" style="left: 80%; animation-delay: -2.1s;"></div>
+        <div class="confetti" style="left: 90%; animation-delay: -2.4s;"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+        <!-- Stars -->
+        <div class="star w-4 h-4" style="top: 10%; left: 10%; animation-delay: 0s;"></div>
+        <div class="star w-3 h-3" style="top: 20%; left: 80%; animation-delay: -0.5s;"></div>
+        <div class="star w-5 h-5" style="top: 70%; left: 15%; animation-delay: -1s;"></div>
+        <div class="star w-2 h-2" style="top: 80%; left: 85%; animation-delay: -1.5s;"></div>
+        <div class="star w-4 h-4" style="top: 30%; left: 70%; animation-delay: -2s;"></div>
+
+        <div class="text-center z-10 px-4">
+            <h1 class="text-6xl md:text-8xl font-bold text-white mb-8 dancing-script">
+                Happy Birthday Ashrita! 🎉
+            </h1>
+            
+            <!-- Floating Balloons and Cake -->
+            <div class="flex justify-center items-center space-x-8 mb-12">
+                <div class="balloon text-6xl">🎈</div>
+                <div class="balloon text-8xl" style="animation-delay: -1s;">🎂</div>
+                <div class="balloon text-6xl" style="animation-delay: -2s;">🎈</div>
+            </div>
+            
+            <button onclick="scrollToSection('about')" class="bg-white text-purple-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-purple-100 transition-all duration-300 transform hover:scale-105 glow">
+                Let's Celebrate! ✨
+            </button>
+        </div>
+    </section>
+
+
+
+    <!-- About Ashrita -->
+    <section id="about" class="bg-gradient-to-br from-pink-100 via-purple-50 to-indigo-100 py-20 relative overflow-hidden">
+        <!-- Floating Hearts -->
+        <div class="heart text-2xl" style="top: 10%; left: 10%; animation-delay: 0s;">💖</div>
+        <div class="heart text-3xl" style="top: 20%; left: 80%; animation-delay: -1s;">✨</div>
+        <div class="heart text-2xl" style="top: 70%; left: 15%; animation-delay: -2s;">💕</div>
+        <div class="heart text-4xl" style="top: 80%; left: 85%; animation-delay: -3s;">🌟</div>
+        <div class="heart text-2xl" style="top: 30%; left: 70%; animation-delay: -4s;">💝</div>
+
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-6xl font-bold text-purple-800 mb-12 dancing-script">About Our Amazing Ashrita 🌸</h2>
+            <div class="max-w-4xl mx-auto bg-white bg-opacity-80 rounded-3xl p-8 md:p-12 shadow-2xl">
+                <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
+                   Ashrita isn’t just a girl—she’s the heartbeat of every group she’s in. The one who can turn the dullest day into a laugh riot, who knows how to balance being the sweetest friend and the strictest “chota don” when things go out of line. She’s the reason so many stories, memories, and endless smiles exist.From cracking jokes to giving the best advice, from being everyone’s partner-in-crime to standing strong like a boss when needed—Ashrita is truly unforgettable. Today, we celebrate not just her birthday, but the amazing person she is: fun, fearless, and full of life. Your infectious laughter, kind heart, and incredible spirit make you shine in ways words can’t capture. Whether you’re pursuing your passions, spreading joy to everyone around you, or simply being your authentic self, you inspire us all. Your creativity knows no bounds, your friendship is a treasure, and your smile can light up even the darkest days. So here’s to you, Ashrita—another year older, another year brighter 🌟. You deserve all the happiness, love, and beautiful moments this new year will bring! 💫🎉 That way it feels tighter, but still has the fun + heartfelt combo. Want me to also add a short quirky line under the hero section (like a tagline)? Example: “Happy Birthday to our Chota Don 🕶️💖—ruling hearts and stealing laughs since day one!” Would give the site a cheeky punch.
+                </p>
+            </div>
+        </div>
+    </section>
+
+   <!-- Photo Gallery -->
+<section class="bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 py-20">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl md:text-6xl font-bold text-white text-center mb-12 dancing-script">
+      Beautiful Memories 📸
+    </h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div class="photo-hover rounded-lg aspect-square overflow-hidden">
+        <img src="images/pic1.jpg" alt="Memory 1" class="w-full h-full object-cover">
+      </div>
+      <div class="photo-hover rounded-lg aspect-square overflow-hidden">
+        <img src="images/pic2.jpg" alt="Memory 2" class="w-full h-full object-cover">
+      </div>
+      <div class="photo-hover rounded-lg aspect-square overflow-hidden">
+        <img src="images/pic3.jpg" alt="Memory 3" class="w-full h-full object-cover">
+      </div>
+      <div class="photo-hover rounded-lg aspect-square overflow-hidden">
+        <img src="images/pic4.jpg" alt="Memory 4" class="w-full h-full object-cover">
+      </div>
+      <div class="photo-hover rounded-lg aspect-square overflow-hidden">
+        <img src="images/pic5.jpg" alt="Memory 5" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Friend Wishes -->
+    <section class="cork-board py-20 relative">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-6xl font-bold text-brown-800 text-center mb-12 dancing-script">Messages from Friends 💌</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="sticky-note p-6 rounded-lg bounce-in" style="animation-delay: 0.2s;">
+                    <p class="dancing-script text-lg mb-4">" Happy birthday ashu , may god bless u happy 18 have a good life ahead"</p>
+                    <p class="text-right font-semibold">– Adithya Dhami</p>
+                </div>
+                <div class="sticky-note p-6 rounded-lg bounce-in" style="animation-delay: 0.4s;">
+                    <p class="dancing-script text-lg mb-4">"A Very Happy Birthday Day Ash! 🌸Hope you enjoy your day to the fullest.😎 Miss those days when we were enjoying together.✨ Hope we meet soon!!"</p>
+                    <p class="text-right font-semibold">– Asad</p>
+                </div>
+                <div class="sticky-note p-6 rounded-lg bounce-in" style="animation-delay: 0.6s;">
+                    <p class="dancing-script text-lg mb-4">"Happy Birthday, Ashi! The glue of our gang 🎉 Wishing you endless laughter, happiness, and success in everything you do. You’ve always been that spark who brings energy to everyone around, and today’s all about celebrating you. Stay the same chota don we all love 🕶️—fun, fearless, and unforgettable. Have the best year ahead, buddy!"</p>
+                    <p class="text-right font-semibold">– Ray</p>
+                </div>
+                <div class="sticky-note p-6 rounded-lg bounce-in" style="animation-delay: 0.8s;">
+                    <p class="dancing-script text-lg mb-4">"Happiest 18 bbg! 🎉😊🤞🎀🌸💗🦋 I dont have to tell you or remind you cause you already know how much you mean to me, how much i love you and i will never ever give up on us!!  Go get ur driving license and all done!! Will always be your passenger princess 🌸🌸🎉🌻🌠💗🦋🎀"</p>
+                    <p class="text-right font-semibold">– Misba 😉</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wish Wall -->
+    <section class="bg-gradient-to-br from-purple-600 via-pink-600 to-red-500 py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-6xl font-bold text-white text-center mb-12 dancing-script">Wish Wall ✍️</h2>
+            <div class="max-w-2xl mx-auto mb-12">
+                <div class="bg-white rounded-lg p-6 shadow-2xl">
+                    <textarea id="wishInput" placeholder="Write your birthday wish for Ashrita..." class="w-full p-4 border-2 border-purple-200 rounded-lg resize-none h-32 focus:border-purple-500 focus:outline-none"></textarea>
+                    <input id="nameInput" type="text" placeholder="Your name" class="w-full p-4 border-2 border-purple-200 rounded-lg mt-4 focus:border-purple-500 focus:outline-none">
+                    <button onclick="addWish()" class="w-full bg-purple-600 text-white py-4 rounded-lg mt-4 font-semibold hover:bg-purple-700 transition-colors">
+                        Add Your Wish 💝
+                    </button>
+                </div>
+            </div>
+            <div id="wishWall" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <!-- Wishes will be added here -->
+            </div>
+        </div>
+    </section>
+
+   <!-- Music Player -->
+<section class="bg-gradient-to-br from-indigo-800 via-purple-800 to-pink-800 py-20 relative overflow-hidden">
+    <!-- Musical Notes -->
+    <div class="musical-note text-3xl" style="top: 10%; left: 10%; animation-delay: 0s;">🎵</div>
+    <div class="musical-note text-2xl" style="top: 20%; left: 80%; animation-delay: -1s;">🎶</div>
+    <div class="musical-note text-4xl" style="top: 70%; left: 15%; animation-delay: -2s;">🎵</div>
+    <div class="musical-note text-3xl" style="top: 80%; left: 85%; animation-delay: -3s;">🎶</div>
+
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl md:text-6xl font-bold text-white mb-12 dancing-script">Birthday Vibes 🎶</h2>
+        <div class="bg-white bg-opacity-20 rounded-3xl p-8 max-w-md mx-auto">
+            <div class="text-6xl mb-6">🎵</div>
+            <p class="text-white text-xl mb-6">Let the birthday music play!</p>
+            <button id="musicBtn" onclick="toggleMusic()" class="bg-white text-purple-800 px-8 py-4 rounded-full font-semibold text-lg hover:bg-purple-100 transition-all duration-300 transform hover:scale-105">
+                🎵 Play Birthday Song
+            </button>
+        </div>
+    </div>
+
+    <!-- Audio File -->
+    <audio id="birthdaySong" src="music/ashritamusic.mp3"></audio>
+</section>
+
+<script>
+  const music = document.getElementById("birthdaySong");
+  const btn = document.getElementById("musicBtn");
+  let isPlaying = false;
+
+  function toggleMusic() {
+    if (isPlaying) {
+      music.pause();
+      btn.textContent = "🎵 Play Birthday Song";
+    } else {
+      music.play();
+      btn.textContent = "⏸️ Pause Birthday Song";
+    }
+    isPlaying = !isPlaying;
+  }
+</script>
+
+
+    <!-- Final Surprise -->
+    <section class="bg-gradient-to-br from-yellow-400 via-orange-400 to-red-400 py-20">
+        <div class="container mx-auto px-4 text-center">      
+              <h2 class="text-4xl md:text-6xl font-bold text-white mb-12 dancing-script">Make a Wish! 🎂</h2>
+            <div class="max-w-md mx-auto">
+                <div id="birthdayCake" onclick="blowCandles()" class="cursor-pointer transform hover:scale-105 transition-transform duration-300">
+                    <!-- Cake -->
+                    <div class="bg-pink-300 rounded-t-full h-32 w-64 mx-auto relative mb-4">
+                        <!-- Candles -->
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-8 flex space-x-4">
+                            <div class="candle-flame w-2 h-6 relative">
+                                <div class="w-1 h-4 bg-yellow-200 mx-auto"></div>
+                                <div class="candle-flame w-3 h-3 absolute -top-1 left-1/2 transform -translate-x-1/2"></div>
+                            </div>
+                            <div class="candle-flame w-2 h-6 relative">
+                                <div class="w-1 h-4 bg-yellow-200 mx-auto"></div>
+                                <div class="candle-flame w-3 h-3 absolute -top-1 left-1/2 transform -translate-x-1/2"></div>
+                            </div>
+                            <div class="candle-flame w-2 h-6 relative">
+                                <div class="w-1 h-4 bg-yellow-200 mx-auto"></div>
+                                <div class="candle-flame w-3 h-3 absolute -top-1 left-1/2 transform -translate-x-1/2"></div>
+                            </div>
+                        </div>
+                        <!-- Cake Base -->
+                        <div class="bg-purple-300 h-16 w-64 mx-auto rounded-b-lg"></div>
+                    </div>
+                </div>
+                <p class="text-white text-xl mb-8">Click the cake to blow out the candles! 🕯️</p>
+                <div id="surpriseMessage" class="hidden">
+                    <div class="bg-white bg-opacity-90 rounded-3xl p-8 mb-8">
+                        <h3 class="text-4xl font-bold text-purple-800 mb-4 dancing-script">We Love You Ashrita! ❤️</h3>
+                        <p class="text-lg text-gray-700">May all your wishes come true! 🌟</p>
+                    </div>
+                </div>
+                <div id="fireworks" class="fixed inset-0 pointer-events-none z-50 hidden"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-purple-900 to-indigo-900 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-2xl text-white mb-6 dancing-script">Made with love by your friends 💖</p>
+            <div class="flex justify-center space-x-6">
+                <div class="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center text-white text-xl hover:bg-pink-600 transition-colors cursor-pointer hover:scale-110 transform duration-300">
+                    💕
+                </div>
+                <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white text-xl hover:bg-blue-600 transition-colors cursor-pointer hover:scale-110 transform duration-300">
+                    🌟
+                </div>
+                <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white text-xl hover:bg-green-600 transition-colors cursor-pointer hover:scale-110 transform duration-300">
+                    🎉
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+        
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        
+        // Blow candles functionality
+        function blowCandles() {
+            const cake = document.getElementById('birthdayCake');
+            const message = document.getElementById('surpriseMessage');
+            const fireworksContainer = document.getElementById('fireworks');
+            
+            // Hide candles (simulate blowing out)
+            const flames = cake.querySelectorAll('.candle-flame');
+            flames.forEach(flame => {
+                flame.style.opacity = '0';
+            });
+            
+            // Show surprise message
+            message.classList.remove('hidden');
+            
+            // Create fireworks
+            fireworksContainer.classList.remove('hidden');
+            createFireworks();
+            
+            // Hide fireworks after 3 seconds
+            setTimeout(() => {
+                fireworksContainer.classList.add('hidden');
+                fireworksContainer.innerHTML = '';
+            }, 3000);
+        }
+        
+        function createFireworks() {
+            const container = document.getElementById('fireworks');
+            const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24', '#6c5ce7', '#fd79a8'];
+            
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const firework = document.createElement('div');
+                    firework.className = 'firework';
+                    firework.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    firework.style.left = Math.random() * 100 + '%';
+                    firework.style.top = Math.random() * 100 + '%';
+                    container.appendChild(firework);
+                    
+                    setTimeout(() => {
+                        firework.remove();
+                    }, 1000);
+                }, i * 100);
+            }
+        }
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('bounce-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe sticky notes
+        document.querySelectorAll('.sticky-note').forEach(note => {
+            observer.observe(note);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97a72535b070c464',t:'MTc1NzA5MDE4NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
